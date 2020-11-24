@@ -1,0 +1,10 @@
+.sidebar {
+  @include flex;
+  height: 100vh;
+
+  .sidebar-list {
+    @include clean-list;
+    margin-top: 50px;
+
+  }
+}

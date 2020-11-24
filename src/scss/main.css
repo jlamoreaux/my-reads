@@ -1,0 +1,117 @@
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-box-pack: normal;
+          justify-content: normal;
+  -webkit-justify-content: normal;
+  -moz-justify-content: normal;
+  -ms-flex-pack: normal;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-box-pack: normal;
+          justify-content: normal;
+  -webkit-justify-content: normal;
+  -moz-justify-content: normal;
+  -ms-flex-pack: normal;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100vh;
+}
+
+.sidebar .sidebar-list {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.shelves {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-box-pack: normal;
+          justify-content: normal;
+  -webkit-justify-content: normal;
+  -moz-justify-content: normal;
+  -ms-flex-pack: normal;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+
+.shelves .shelf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-box-pack: normal;
+          justify-content: normal;
+  -webkit-justify-content: normal;
+  -moz-justify-content: normal;
+  -ms-flex-pack: normal;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+
+.shelves .shelf .book-list {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-box-pack: normal;
+          justify-content: normal;
+  -webkit-justify-content: normal;
+  -moz-justify-content: normal;
+  -ms-flex-pack: normal;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+
+.shelves .shelf .book-list .book-list-item {
+  margin: auto 10px;
+}

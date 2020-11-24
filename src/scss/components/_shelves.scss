@@ -1,0 +1,19 @@
+.shelves {
+  @include flex($direction: column);
+  width: 100%;
+
+  .shelf {
+    @include flex($direction: column);
+    width: 100%;
+
+    .book-list {
+      @include clean-list;
+      @include flex;
+      width: 100%;
+
+      .book-list-item {
+        margin: auto 10px;
+      }
+    }
+  }
+}
