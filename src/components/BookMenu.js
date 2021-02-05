@@ -9,6 +9,7 @@ const BookMenu = (props) => {
   const handleShelfChange = (shelf) => {
     if (book.shelf !== shelf) {
       props.handleShelfChange(book, shelf);
+      props.handleOpenMenu();
     }
   }
 
