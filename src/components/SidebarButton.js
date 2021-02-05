@@ -11,7 +11,7 @@ const SidebarButton = (props) => {
     props.updateCurrentShelf(shelf)
   }
   return (
-    <button className={`sidebar-button capitalize${props.isCurrentShelf ? 'current' : ''}`} onClick={updateCurrentShelf}>
+    <button className={`sidebar-button menu-button capitalize${props.isCurrentShelf ? ' current' : ''}`} onClick={updateCurrentShelf}>
       {splitWord(props.shelf)}
     </button>
   );

@@ -22,7 +22,7 @@ const Shelves = (props) => {
     return (
       <div className="shelves">
         <Shelf
-          category={shelf}
+          shelf={shelf}
           isCurrent={shelf === props.currentShelf}
           books={props.books.filter((book) => book.shelf === shelf)}
           key={shelf}

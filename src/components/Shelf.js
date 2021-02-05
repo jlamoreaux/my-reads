@@ -1,6 +1,6 @@
-
 import "./Book";
 import Book from './Book';
+import { splitWord } from '../utils/Strings';
 
 const Shelf = (props) => {
   const books = props.books;
@@ -14,8 +14,8 @@ const Shelf = (props) => {
   };
   return (
     <section className='shelf'>
-      <h2 className='shelf-heading'>
-        {props.shelf}
+      <h2 className='shelf-heading capitalize'>
+        {splitWord(props.shelf)}
       </h2>
       <ul className='book-list'>
         {books.map(book => (

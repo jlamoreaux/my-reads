@@ -4,11 +4,11 @@ const Sidebar = (props) => {
 
   const updateCurrentShelf = (shelf) => {
     props.updateCurrentShelf(shelf);
-    console.log(props);
   }
 
   return (
     <nav className="sidebar">
+      <h3 className="sidebar-header">Shelves</h3>
       <ul className="sidebar-list">
         <li className="sidebar-list-item">
           <SidebarButton
