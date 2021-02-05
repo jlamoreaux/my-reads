@@ -1,4 +1,4 @@
-.app {
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,6 +16,11 @@
   -ms-flex-pack: normal;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+}
+
+.app-title {
+  font-size: 3em;
+  text-align: center;
 }
 
 .capitalize {
@@ -36,11 +41,11 @@
   display: flex;
   display: -moz-flex;
   display: -ms-flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: row;
-  -ms-flex-direction: row;
-  -moz-flex-direction: row;
+          flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
   -webkit-box-pack: normal;
           justify-content: normal;
   -webkit-justify-content: normal;
@@ -49,13 +54,37 @@
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   height: 100vh;
+  width: 200px;
+  padding: 20px 10px;
+}
+
+.sidebar .sidebar-header {
+  margin: 5px;
+  font-size: 1.5em;
 }
 
 .sidebar .sidebar-list {
   list-style: none;
   margin: auto;
   padding: 0;
-  margin-top: 50px;
+  margin-top: 0;
+}
+
+.sidebar .sidebar-list .sidebar-button {
+  font-size: 1.25em;
+  color: #aaa;
+  font-weight: 700;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  padding: 10px;
+}
+
+.sidebar .sidebar-list .sidebar-button:hover {
+  color: #444;
+}
+
+.sidebar .sidebar-list .sidebar-button.current {
+  color: #000;
 }
 
 .shelves {
@@ -209,7 +238,7 @@
 
 .book .book-menu .book-menu-list {
   list-style: none;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 

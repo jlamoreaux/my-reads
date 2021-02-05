@@ -59,17 +59,20 @@ const App = () => {
         <Switch>
           <Route path="/">
             <div className="app">
-              <Sidebar
-                shelves={shelves}
-                currentShelf={currentShelf}
-                updateCurrentShelf={updateCurrentShelf}
-              />
-              <Shelves
-                currentShelf={currentShelf}
-                shelves={shelves}
-                books={books}
-                handleShelfChange={handleShelfChange}
-              />
+              <h1 className="app-title">My Reads</h1>
+              <div className="main">
+                <Sidebar
+                  shelves={shelves}
+                  currentShelf={currentShelf}
+                  updateCurrentShelf={updateCurrentShelf}
+                  />
+                <Shelves
+                  currentShelf={currentShelf}
+                  shelves={shelves}
+                  books={books}
+                  handleShelfChange={handleShelfChange}
+                  />
+                </div>
             </div>
           </Route>
         </Switch>

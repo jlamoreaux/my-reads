@@ -29,6 +29,7 @@ const Book = (props) => {
         book={props.book}
         currentMenu={props.currentMenu}
         handleShelfChange={handleShelfChange}
+        handleOpenMenu={handleOpenMenu}
       />
     </li>
   );
