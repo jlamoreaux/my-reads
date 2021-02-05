@@ -1,40 +1,79 @@
-import { React, Component } from 'react';
+import { React, useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
-import Sidebar from './Sidebar';
-import Shelves from './Shelves';
+import Sidebar from './components/Sidebar';
+import Shelves from './components/Shelves';
 import './scss/main.css';
 
 import * as BooksAPI from './utils/BooksAPI';
 
+const App = () => {
+  const [shelves, setShelves] = useState([]);
+  const [books, setBooks] = useState([]);
+  const [currentShelf, setCurrentShelf] = useState('');
 
+  const getData = async () => {
+    const newBooks = await BooksAPI.getAll();
+    let newShelves = [];
+    await newBooks.forEach((book) => {
+      if (!newShelves.some((shelf) => shelf === book.shelf)) {
+        newShelves.push(book.shelf);
+      }
+    });
+    setBooks(books => [...books, ...newBooks]);
+    setShelves(newShelves);
+  };
 
-class App extends Component {
-  state = {
-    categories: [],
-    books: []
+  const updateCurrentShelf = (shelf) => {
+    setCurrentShelf(shelf);
   }
-  componentDidMount() {
-    BooksAPI.getAll().then((books) => {
-      let categories = [];
-      books.forEach(book => {
-        if (!categories.some(shelf => shelf === book.shelf)) {
-          categories.push(book.shelf);
-        }
-      })
-      this.setState(() => ({ books, categories }));
-    })
-  }
-  render() {
+
+  const handleShelfChange = (book, shelf) => {
+    const currentBooks = books;
+    currentBooks.forEach(currentBook => {
+      if (currentBook.id === book.id) {
+        currentBook.shelf = shelf;
+      }
+    });
+
+    setBooks([...currentBooks]);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (!books || !shelves) {
     return (
-      <div className="app">
-        <Sidebar
-          categories={this.state.categories}
-        />
-        <Shelves
-          categories={this.state.categories}
-          books={this.state.books}
-        />
-      </div>
+      <h1>
+        Loading...
+      </h1>
+    )
+  } else {
+    return (
+      <Router>
+        <Switch>
+          <Route path="/">
+            <div className="app">
+              <Sidebar
+                shelves={shelves}
+                currentShelf={currentShelf}
+                updateCurrentShelf={updateCurrentShelf}
+              />
+              <Shelves
+                currentShelf={currentShelf}
+                shelves={shelves}
+                books={books}
+                handleShelfChange={handleShelfChange}
+              />
+            </div>
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }

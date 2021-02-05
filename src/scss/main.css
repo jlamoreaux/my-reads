@@ -18,6 +18,18 @@
       flex-wrap: nowrap;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
 .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,4 +126,101 @@
 
 .shelves .shelf .book-list .book-list-item {
   margin: auto 10px;
+}
+
+.book {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 200px;
+  width: 100%;
+  position: relative;
+}
+
+.book .book-tn {
+  margin: auto;
+  background-size: contain;
+  height: 200px;
+  width: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.book .book-title {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.book .book-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 160px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.book .book-button .circle-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.book .book-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 150px;
+  top: 170px;
+  left: 180px;
+  z-index: 5;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.book .book-menu.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.book .book-menu .book-menu-header {
+  margin: 5px;
+}
+
+.book .book-menu .book-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book .book-menu .book-menu-list .book-menu-list-item {
+  padding: 5px;
+}
+
+.book .book-menu .book-menu-list .book-menu-list-item:hover {
+  background-color: #444;
+}
+
+.book .book-menu .book-menu-list .book-menu-list-item:hover .menu-button {
+  color: #fff;
 }

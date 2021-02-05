@@ -17,3 +17,84 @@
     }
   }
 }
+
+.book {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 200px;
+  width: 100%;
+  position: relative;
+
+  .book-tn {
+    margin: auto;
+    background-size: contain;
+    height: 200px;
+    width: 150px;
+    background: {
+      repeat: no-repeat;
+      size: contain;
+    }
+  }
+  .book-title {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .book-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 160px;
+    right: 30px;
+    cursor: pointer;
+
+    .circle-svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .book-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 150px;
+    top: 170px;
+    left: 180px;
+    z-index: 5;
+    flex-direction: column;
+
+    &.open {
+      display: flex;
+    }
+
+    .book-menu-header {
+      margin: 5px 
+    }
+
+    .book-menu-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .book-menu-list-item {
+        padding: 5px;
+
+        &:hover {
+          background-color: #444;
+          .menu-button { color: #fff };
+        }
+      }
+    }
+  }
+}
