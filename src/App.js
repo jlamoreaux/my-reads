@@ -10,11 +10,13 @@ import Shelves from './components/Shelves';
 import './scss/main.css';
 
 import * as BooksAPI from './utils/BooksAPI';
+import Search from './components/Search';
 
 const App = () => {
   const [shelves, setShelves] = useState([]);
   const [books, setBooks] = useState([]);
   const [currentShelf, setCurrentShelf] = useState('');
+  const [query, setQuery] = useState('')
 
   const getData = async () => {
     const newBooks = await BooksAPI.getAll();
@@ -43,6 +45,10 @@ const App = () => {
     setBooks([...currentBooks]);
   };
 
+  const updateQuery = (q) => {
+    setQuery(q);
+  }
+
   useEffect(() => {
     getData();
   }, []);
@@ -56,26 +62,34 @@ const App = () => {
   } else {
     return (
       <Router>
-        <Switch>
-          <Route path="/">
-            <div className="app">
-              <h1 className="app-title">My Reads</h1>
-              <div className="main">
-                <Sidebar
-                  shelves={shelves}
-                  currentShelf={currentShelf}
-                  updateCurrentShelf={updateCurrentShelf}
-                  />
-                <Shelves
-                  currentShelf={currentShelf}
-                  shelves={shelves}
-                  books={books}
-                  handleShelfChange={handleShelfChange}
-                  />
-                </div>
-            </div>
-          </Route>
-        </Switch>
+        <div className="app">
+          <Switch>
+            <Route path="/search">
+              <Search updateQuery={updateQuery} />
+            </Route>
+          </Switch>
+          <h1 className="app-title">My Reads</h1>
+          <div className="main">
+            <Sidebar
+              shelves={shelves}
+              currentShelf={currentShelf}
+              updateCurrentShelf={updateCurrentShelf}
+            />
+            <Shelves
+              currentShelf={currentShelf}
+              shelves={shelves}
+              books={
+                query !== ''
+                  ? books.filter((book) =>
+                      book.title.toLowerCase().includes(query.toLowerCase()) ||
+                      book.authors.some(author => author.toLowerCase().includes(query.toLowerCase()))
+                    )
+                  : books
+              }
+              handleShelfChange={handleShelfChange}
+            />
+          </div>
+        </div>
       </Router>
     );
   }
