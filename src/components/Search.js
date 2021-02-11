@@ -11,7 +11,7 @@ const Search = (props) => {
   return (
     <div className="search-bar">
       <Link to="/" className="back-button">
-        <FontAwesomeIcon icon={faArrowLeft} className="back-icon"/>
+        <FontAwesomeIcon icon={faArrowLeft} className="back-icon" onClick={(() => props.updateQuery(''))}/>
       </Link>
       <form className="search-form">
         <label htmlFor="search" className="search-label label-hidden">Search</label>
