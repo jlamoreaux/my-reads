@@ -3,14 +3,20 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import Sidebar from './components/Sidebar';
 import Shelves from './components/Shelves';
+import TopBar from './components/TopBar';
+
 import './scss/main.css';
 
 import * as BooksAPI from './utils/BooksAPI';
-import Search from './components/Search';
+
 
 const App = () => {
   const [shelves, setShelves] = useState([]);
@@ -65,15 +71,20 @@ const App = () => {
         <div className="app">
           <Switch>
             <Route path="/search">
-              <Search updateQuery={updateQuery} />
+              <TopBar updateQuery={updateQuery} />
             </Route>
           </Switch>
-          <h1 className="app-title">My Reads</h1>
+          <header>
+            <h1 className="app-title">My Reads</h1>
+            <Link to="/search" className="search-link" id="search-link"><FontAwesomeIcon icon={faSearch}/></Link>
+          </header>
           <div className="main">
             <Sidebar
               shelves={shelves}
               currentShelf={currentShelf}
               updateCurrentShelf={updateCurrentShelf}
+              query={query}
+              updateQuery={updateQuery}
             />
             <Shelves
               currentShelf={currentShelf}

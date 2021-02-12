@@ -1,23 +1,4 @@
-.search-bar {
-  box-shadow: #000 1px 1px 10px;
-  display: flex;
-  flex-direction: row;
 
-  .back-button {
-    padding: 5px;
-    margin-right: 10px;
-
-    .back-icon {
-      width: 2em;
-      height: 2em;
-      margin: auto;
-      color: #aaa;
-    }
-
-    &:hover {
-      .back-icon { color: #444; }
-    }
-  }
   .search-form {
     display: flex;
     width: 100%;
@@ -36,6 +17,7 @@
       font-size: 1.5em;
       border-radius: 0;
       border: 0;
+      margin: auto;
     }
 
     .search-button {
@@ -52,4 +34,3 @@
     }
 
   }
-}

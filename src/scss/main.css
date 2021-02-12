@@ -35,9 +35,70 @@
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
 * {
   -webkit-transition: .2s all;
   transition: .2s all;
+}
+
+#search-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 0;
+  color: #aaa;
+}
+
+#search-link:hover {
+  color: #444;
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: 2em;
+  height: 2em;
+}
+
+/*
+ Top Bar 
+*/
+.top-bar {
+  -webkit-box-shadow: #000 1px 1px 10px;
+          box-shadow: #000 1px 1px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  height: 50px;
+}
+
+.top-bar .back-button {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.top-bar .back-button .back-icon {
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  color: #aaa;
+}
+
+.top-bar .back-button:hover .back-icon {
+  color: #444;
 }
 
 .sidebar {
@@ -72,7 +133,7 @@
   list-style: none;
   margin: auto;
   padding: 0;
-  margin-top: 0;
+  margin: 0 auto;
 }
 
 .sidebar .sidebar-list .sidebar-button {
@@ -90,6 +151,10 @@
 
 .sidebar .sidebar-list .sidebar-button.current {
   color: #000;
+}
+
+.sidebar .search-form .search-input {
+  font-size: 1em;
 }
 
 .shelves {
@@ -259,35 +324,7 @@
   color: #fff;
 }
 
-.search-bar {
-  -webkit-box-shadow: #000 1px 1px 10px;
-          box-shadow: #000 1px 1px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.search-bar .back-button {
-  padding: 5px;
-  margin-right: 10px;
-}
-
-.search-bar .back-button .back-icon {
-  width: 2em;
-  height: 2em;
-  margin: auto;
-  color: #aaa;
-}
-
-.search-bar .back-button:hover .back-icon {
-  color: #444;
-}
-
-.search-bar .search-form {
+.search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,21 +332,22 @@
   position: relative;
 }
 
-.search-bar .search-form .search-label.label-hidden {
+.search-form .search-label.label-hidden {
   height: 0px;
   width: 0px;
   overflow: hidden;
 }
 
-.search-bar .search-form .search-input {
+.search-form .search-input {
   width: 100%;
   height: 40px;
   font-size: 1.5em;
   border-radius: 0;
   border: 0;
+  margin: auto;
 }
 
-.search-bar .search-form .search-button {
+.search-form .search-button {
   position: absolute;
   right: 0;
   height: 100%;
@@ -317,7 +355,7 @@
   border: none;
 }
 
-.search-bar .search-form .search-icon {
+.search-form .search-icon {
   width: 2em;
   height: 2em;
 }

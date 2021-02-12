@@ -19,6 +19,62 @@
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
 * {
   transition: .2s all;
+}
+
+#search-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 0;
+  color: #aaa; 
+
+  &:hover {
+    color: #444;
+  }
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: 2em;
+  height: 2em;
+}
+
+
+/*
+ Top Bar 
+*/
+.top-bar {
+  box-shadow: #000 1px 1px 10px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  height: 50px;
+
+  .back-button {
+    padding: 5px;
+    margin-right: 10px;
+
+    .back-icon {
+      width: 2em;
+      height: 2em;
+      margin: auto;
+      color: #aaa;
+    }
+
+    &:hover {
+      .back-icon { color: #444; }
+    }
+  }
 }

@@ -11,7 +11,7 @@
 
   .sidebar-list {
     @include clean-list;
-    margin-top: 0;
+    margin: 0 auto;
 
     .sidebar-button {
       font-size: 1.25em;
@@ -27,6 +27,12 @@
       &.current {
         color: #000;
       }
+    }
+  }
+
+  .search-form {
+    .search-input {
+      font-size: 1em;
     }
   }
 }

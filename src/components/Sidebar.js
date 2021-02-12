@@ -1,4 +1,5 @@
 import SidebarButton from './SidebarButton';
+import Search from "./Search";
 
 const Sidebar = (props) => {
 
